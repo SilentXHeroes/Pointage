@@ -1,0 +1,216 @@
+#clock_container {
+  height: 100%; }
+
+#connect {
+  display: none;
+  height: 100%; }
+  #connect > aside {
+    display: flex;
+    flex-direction: column; }
+    #connect > aside#connectInfos > div.error {
+      border: 1px solid #e65555;
+      box-shadow: 0 0 2px #e65555; }
+      #connect > aside#connectInfos > div.error > span {
+        color: #e65555; }
+    #connect > aside > div {
+      display: flex;
+      background-color: #fff;
+      border-radius: 5px;
+      align-items: center;
+      margin-bottom: 1em;
+      transition: all .1s; }
+      #connect > aside > div > span {
+        font-size: 2em;
+        margin: 0 .5em;
+        transition: color .1s; }
+      #connect > aside > div > input {
+        background-color: transparent;
+        border: none;
+        color: #2c2c2c;
+        font-size: 2em;
+        outline: none;
+        padding: .5em;
+        padding-left: 0; }
+  #connect > #footerConnect {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    #connect > #footerConnect > p {
+      color: #e65555;
+      font-size: 1.1em;
+      font-style: italic; }
+    #connect > #footerConnect > button {
+      padding: .3em 2em;
+      border: 1px solid #2c2c2c;
+      background-color: #2c2c2c;
+      color: #fff;
+      font-size: 2em;
+      border-radius: 3px;
+      margin-top: .5em; }
+    #connect > #footerConnect > div {
+      background: none;
+      margin-top: 1em;
+      font-size: 1.2em; }
+      #connect > #footerConnect > div > button {
+        text-decoration: underline;
+        margin-left: .5em;
+        cursor: pointer;
+        font-size: 1em;
+        outline: none;
+        word-spacing: 3px;
+        letter-spacing: .5px;
+        font-family: 'lobster_1.3regular'; }
+
+#main.connect #user_container > #clock_container, #main.connect #user_container #newUser {
+  display: none; }
+
+#user_container .clock {
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  position: relative;
+  box-shadow: 0 0 0px 10px #2c2c2c;
+  background-color: #2c2c2c; }
+  #user_container .clock > .feature {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1%;
+    border: 2vh solid #fff;
+    border-left: 0;
+    border-right: 0; }
+    #user_container .clock > .feature.clock5 {
+      transform: rotate(30deg); }
+    #user_container .clock > .feature.clock10 {
+      transform: rotate(60deg); }
+    #user_container .clock > .feature.clock15 {
+      transform: rotate(90deg); }
+    #user_container .clock > .feature.clock20 {
+      transform: rotate(120deg); }
+    #user_container .clock > .feature.clock25 {
+      transform: rotate(150deg); }
+    #user_container .clock > .feature.high, #user_container .clock > .feature.clock15 {
+      border: 4vh solid #fff;
+      border-right: 0;
+      border-left: 0;
+      width: 2%; }
+    #user_container .clock > .feature.needle {
+      border: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      transition: transform .5s; }
+      #user_container .clock > .feature.needle > div {
+        width: 100%;
+        background-color: #fff;
+        border-radius: 25px;
+        transform: translateY(-50%); }
+      #user_container .clock > .feature.needle.big {
+        width: 5%;
+        transform: rotate(90deg);
+        justify-content: center; }
+        #user_container .clock > .feature.needle.big > div {
+          height: 35%;
+          width: 50%;
+          box-shadow: 0 0 20px #2c2c2c; }
+      #user_container .clock > .feature.needle.small {
+        width: 3%;
+        transform: rotate(0deg); }
+        #user_container .clock > .feature.needle.small > div {
+          height: 30%; }
+  #user_container .clock > .center {
+    position: absolute;
+    width: 7%;
+    height: 7%;
+    background-color: #e97412;
+    border-radius: 100%;
+    box-shadow: 0 0 6px #2c2c2c; }
+
+#user_container .setClock {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex: 1; }
+  #user_container .setClock > span {
+    font-size: 7em;
+    align-self: center; }
+  #user_container .setClock > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1em; }
+    #user_container .setClock > div > p {
+      font-family: 'lobster_1.3regular';
+      font-size: 1.5em; }
+    #user_container .setClock > div > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      #user_container .setClock > div > div > span {
+        font-size: 5em;
+        color: #e97412; }
+      #user_container .setClock > div > div > input {
+        padding: .2em;
+        width: 7vw;
+        font-size: 4em;
+        text-align: center;
+        background-color: #fff; }
+
+#newUser {
+  display: none;
+  height: 100%; }
+  #newUser > #content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1em 0; }
+    #newUser > #content > div {
+      display: flex;
+      flex-direction: column;
+      width: 60vw;
+      flex: 1; }
+    #newUser > #content > #generalInfos {
+      align-items: center;
+      justify-content: space-around; }
+      #newUser > #content > #generalInfos > .customInput {
+        position: relative;
+        display: flex;
+        width: 60%; }
+        #newUser > #content > #generalInfos > .customInput > label {
+          position: absolute;
+          opacity: 0; }
+        #newUser > #content > #generalInfos > .customInput > input {
+          flex: 1;
+          font-size: 1.3em;
+          background-color: #fff;
+          padding: .5em .8em;
+          border-radius: 3px;
+          border: 1px solid transparent;
+          transition: box-shadow .5s, border-color .5s; }
+          #newUser > #content > #generalInfos > .customInput > input::placeholder {
+            color: rgba(41, 41, 41, 0.7); }
+          #newUser > #content > #generalInfos > .customInput > input:focus {
+            border-color: rgba(41, 41, 41, 0.7);
+            box-shadow: 0 0 15px 3px rgba(41, 41, 41, 0.5); }
+    #newUser > #content > #workInfos {
+      display: none; }
+  #newUser > #btnBottom {
+    display: flex;
+    align-items: center; }
+    #newUser > #btnBottom > button {
+      display: flex;
+      align-items: center;
+      background-color: #47d247;
+      font-size: 1.8em;
+      padding: .3em 1.5em;
+      color: #fff;
+      border-radius: 30px; }
+      #newUser > #btnBottom > button > i {
+        margin-left: 1em; }
+  #newUser > #progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: .15;
+    width: 80vw; }

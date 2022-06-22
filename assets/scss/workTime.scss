@@ -1,0 +1,202 @@
+@import '_color.scss';
+
+#workTime {
+    height: 50%;
+
+    > #time {
+        // box-shadow: 0px 0px 20px 2px #989898;
+        // padding: 10px 50px;
+        // border-radius: 70px;
+        // border: 2px solid #40ac40;
+        // transition: all 1.5s;
+
+        .hour {
+            color: #505050;
+            transition: color .7s;
+            position: relative;
+
+            > p, > span {
+                font-size: 10em;
+                font-family: 'lcd1';
+            }
+
+            > p{
+                transition: opacity .5s;
+
+                &.null{
+                    opacity: .2;
+                }
+            }
+
+            > span{
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: .1;
+            }
+
+            &:not(.separator) {
+                box-shadow: 0px 8px #505050;
+                height: 155px;
+            }
+        }
+
+        &.inPause p{
+            color: #e97412;
+        }
+    }
+}
+
+article#buttons {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+
+    > span {
+        cursor: pointer;
+        font-size: 7em;
+        color: #3a3a3a;
+        text-shadow: 0px 0px 8px #292929;
+        transition: .1s color, .7s text-shadow;
+
+        &:hover {
+            text-shadow: 0px 0px 12px #292929;
+            color: #e97412;
+        }
+
+        // &#pause{
+        //     display: flex;
+        //     align-items: center;
+
+        //     &:hover{
+        //         border-color: #e97412;
+
+        //         > div#coffee{
+        //             border-color: #e97412;
+
+        //             span{
+        //                 color: #e97412;
+
+        //                 &#smoke{
+        //                     animation-play-state: running;
+        //                     animation-direction: normal;
+        //                 }
+        //             }
+        //             > #cup > span[class="icon-coffee_top"]{
+        //                 transform: rotate(-12deg);
+        //                 top: 0;
+        //             }
+        //         }
+        //     }
+
+            // > div{
+            //     flex: 1;
+
+            //     &#coffee{
+            //         display: flex;
+            //         padding: 0 20px;
+            //         justify-content: center;
+            //         position: relative;
+            //         border-right: 2px solid #40ac40;
+
+            //         span{
+            //             position: relative;
+            //             transition: .2s all;
+            //             top: 0;
+
+            //             &#smoke{
+            //                 z-index: -1;
+            //                 font-size: 35px;
+            //                 position: absolute;
+            //                 top: 10px;
+            //                 transition: top .2s;
+            //                 animation: hotCoffee 1.5s ease-in-out infinite;
+            //                 animation-play-state: paused;
+            //             }
+            //         }
+
+            //         #cup{
+            //             padding: 5px 0;
+            //             background-color: #292828;
+            //             position: relative;
+
+            //             > span[class='icon-coffee_top']{
+            //                 z-index: 1;
+            //                 position: absolute;
+            //                 left: 0;
+            //                 top: 5px;
+            //                 transition: all .5s;
+            //             }
+            //         }
+            //     }
+
+            //     &.text{
+            //         padding: 0 20px;
+            //     }
+            // }
+
+            // @keyframes hotCoffee{
+            //     0%{top: 0;}
+            //     80%{opacity: 1;}
+            //     100%{opacity: 0; top: -40px;}
+            // }
+        // }
+    }
+
+    > div{
+        display: none;
+    }
+
+    &.begin > span:not(#start),
+    &:not(.begin) > #start,
+    &:not(.pause) > #goToWork,
+    &.pause > #pause,
+    &.end > span
+    {
+        opacity: 0;
+        display: none;
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    &.end > div{
+        display: inline-block;
+    }
+}
+
+#statsUser{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    > div{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 2em;
+
+        > p, > label, > p > span{
+            font-family: 'lobster_1.3regular';
+        }
+
+        > p{
+            font-size: 2em;
+
+            > span.chiffre{
+                color: #e97412;
+            }
+        }
+    }
+}
+
+@keyframes hover {
+    0% {
+        box-shadow: 0 0 0 0 #e97412;
+    }
+
+    80% {
+        box-shadow: 0 0 0 15px transparent;
+    }
+}

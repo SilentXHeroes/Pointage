@@ -1,0 +1,206 @@
+@import '_color.scss';
+
+/**************
+
+FONTS
+
+**************/
+
+@font-face {
+    font-family: 'lcd1';
+    src: url('../webfont/lcd.ttf') format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lobster_1.3regular';
+    src: url('../webfont/lobster/lobster_1.3-webfont.woff2') format("woff2"), url('../webfont/lobster/lobster_1.3-webfont.woff') format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'ubunturegular';
+    src: url('../webfont/ubuntu/ubuntu-r-webfont.woff2') format("woff2"), url('../webfont/ubuntu/ubuntu-r-webfont.woff') format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'audimatbold';
+    src: url('../webfont/audimat/audimat-bold-webfont.woff2') format("woff2"), url('../webfont/audimat/audimat-bold-webfont.woff') format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/**************
+
+STYLE
+
+**************/
+
+* {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    font-family: "ubunturegular";
+}
+
+head, script {
+    display: none;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: $dark;
+    display: flex;
+    flex-direction: row-reverse;
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 5%;
+    background-color: rgba($dark, .5);
+    transition: width .5s;
+}
+
+#main.connect{
+    > header{
+        width: 0;
+    }
+
+    > #window > section:not(#user_container){
+        display: none!important;
+        opacity: 0!important;
+    }
+
+    #user_container{
+        display: flex!important;
+        opacity: 1!important;
+
+        > #connect{
+            display: flex;
+        }
+    }
+}
+
+/**************
+
+ALL
+
+**************/
+
+button, input{
+    background: none;
+    border: 0;
+    outline: none;
+}
+
+.display {
+    display: flex;
+}
+
+#main {
+    width: 100%;
+    flex-direction: row!important;
+}
+
+section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+
+    > #window{
+        background-color: $bgColor;
+        position: relative;
+
+        > section{
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 1;
+            z-index: 1;
+            transition: opacity .5s, transform .3s;
+
+            &.inactive{
+                opacity: 0;
+                z-index: 0;
+                transform: scale(.8);
+            }
+            &.next{
+                transition-delay: .6s;
+            }
+        }
+    }
+
+    > article {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+#main.connect .inactive{
+    transform: none;
+}
+
+/**************
+
+HEADER
+
+**************/
+
+nav {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    > div{
+        display: flex;
+        flex-direction: column;
+
+        a {
+            padding: .5em;
+            font-size: 30px;
+            color: #e8e6e6;
+
+            &:clicked, &:link, &:visited {
+                color: #e8e6e6;
+            }
+        }
+
+        &.medium {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        &.bottom > a {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+}
+
+
+/**************
+
+FOOTER
+
+**************/

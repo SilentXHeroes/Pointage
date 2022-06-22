@@ -1,0 +1,8 @@
+div.containerLoader {
+    position: absolute;
+}
+div.containerLoader > div.circle {
+    position: absolute;
+    background-color: #292828;
+    border-radius: 17px;
+}

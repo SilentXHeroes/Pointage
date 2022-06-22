@@ -1,0 +1,95 @@
+#stats_container #stats {
+  position: relative;
+  margin-top: 4em;
+  height: 70%;
+  width: 80%;
+  border-left: 5px solid #292929;
+  border-bottom: 5px solid #292929; }
+  #stats_container #stats > span.legende {
+    position: absolute; }
+    #stats_container #stats > span.legende.Y {
+      top: 0;
+      left: 0;
+      transform: translateX(-50%); }
+    #stats_container #stats > span.legende.X {
+      bottom: 0;
+      right: 0;
+      transform: translateY(100%); }
+  #stats_container #stats > .repere, #stats_container #stats > .barre {
+    position: absolute;
+    left: 0;
+    bottom: 0; }
+    #stats_container #stats > .repere.X, #stats_container #stats > .barre.X {
+      text-align: center; }
+  #stats_container #stats > .barre {
+    left: -1px;
+    background-color: #292929; }
+    #stats_container #stats > .barre.X {
+      background-color: black;
+      height: 100%; }
+    #stats_container #stats > .barre.Y {
+      height: 1px;
+      width: 100%;
+      opacity: .1; }
+    #stats_container #stats > .barre.level {
+      opacity: 1; }
+  #stats_container #stats > .repere {
+    left: 0; }
+    #stats_container #stats > .repere.Y {
+      transform: translateX(-100%) translateY(50%); }
+    #stats_container #stats > .repere.X {
+      font-size: 2vw;
+      font-family: 'lobster_1.3regular';
+      letter-spacing: 1px;
+      color: #e97412;
+      word-break: break-all; }
+
+#stats_container #listePtg {
+  position: absolute;
+  /* left: 150%; */
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  justify-content: flex-start; }
+  #stats_container #listePtg hr {
+    background-color: grey;
+    height: 2px;
+    position: absolute;
+    border: 0; }
+  #stats_container #listePtg div.year {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 30px 0; }
+    #stats_container #listePtg div.year hr {
+      width: 90%; }
+    #stats_container #listePtg div.year span {
+      font-size: 2em;
+      font-family: 'lobster_1.3regular';
+      background-color: #e8e6e6;
+      z-index: 2;
+      padding: 0 50px; }
+  #stats_container #listePtg div.month {
+    align-self: center;
+    display: inline-block;
+    width: 65%; }
+    #stats_container #listePtg div.month .day {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2em;
+      background-color: #fff;
+      padding: 20px 0;
+      border-radius: 5px;
+      box-shadow: 0px 5px 20px 0px #7d7d7d; }
+      #stats_container #listePtg div.month .day div.date {
+        align-self: flex-start;
+        margin-left: 1em;
+        margin-bottom: 10px;
+        font-size: 1.5em; }
+      #stats_container #listePtg div.month .day hr {
+        width: 80%;
+        position: unset; }

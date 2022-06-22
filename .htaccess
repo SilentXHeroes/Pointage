@@ -1,0 +1,16 @@
+RewriteEngine On
+
+## Appel AJAX de la fonction de la classe avec paramètres
+RewriteRule ^index.php/([a-zA-Z]+)/([a-zA-Z]+)/(.+)$ /index.php?controller=$1&function=$2&params=$3
+
+## Appel AJAX de la fonction de la classe sans paramètres
+RewriteRule ^index.php/([a-zA-Z]+)/([a-zA-Z]+)$ /index.php?controller=$1&function=$2
+
+## Appel AJAX de la classe
+RewriteRule ^index.php/([a-zA-Z]+)$ /index.php?controller=$1
+
+## Appel du controller au démarrage
+RewriteRule ^([a-zA-Z]+)$ /index.php?controller=$1
+
+## Appel par défaut au démarrage
+RewriteRule ^$ /index.php?controller=workTime

@@ -1,0 +1,148 @@
+#calendar_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex: 12;
+  background-color: #e8e6e6; }
+  #calendar_container #selectDate {
+    align-items: center;
+    height: 15%; }
+    #calendar_container #selectDate > #infosCalendar {
+      width: 25%;
+      display: flex;
+      justify-content: space-around; }
+    #calendar_container #selectDate div[class^="active"] {
+      font-size: 40px;
+      font-family: 'lobster_1.3regular';
+      color: #40ac40;
+      padding: 10px 45px; }
+    #calendar_container #selectDate div.selectOne {
+      display: none; }
+  #calendar_container #displayCalendar {
+    flex-direction: row;
+    height: 85%;
+    display: flex;
+    flex: 1;
+    background-color: #e8e6e6;
+    position: relative; }
+    #calendar_container #displayCalendar #displayDays {
+      justify-content: flex-start;
+      flex: 1; }
+      #calendar_container #displayCalendar #displayDays > .caseContainer {
+        width: 100%;
+        display: flex; }
+        #calendar_container #displayCalendar #displayDays > .caseContainer:last {
+          justify-content: center; }
+          #calendar_container #displayCalendar #displayDays > .caseContainer:last .case {
+            flex: unset !important; }
+        #calendar_container #displayCalendar #displayDays > .caseContainer > .case {
+          flex: 1;
+          text-align: center;
+          height: 95px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 5px;
+          margin-bottom: 5px;
+          border: 1px solid #292828;
+          position: relative;
+          border-radius: 25px 0 0 0;
+          transition: background-color .1s, color .1s, opacity .1s; }
+          #calendar_container #displayCalendar #displayDays > .caseContainer > .case:hover {
+            background-color: #292828;
+            color: #e8e6e6; }
+          #calendar_container #displayCalendar #displayDays > .caseContainer > .case.hide {
+            opacity: 0; }
+          #calendar_container #displayCalendar #displayDays > .caseContainer > .case.activeDay {
+            animation: activeDay 1.5s ease-in-out infinite; }
+          #calendar_container #displayCalendar #displayDays > .caseContainer > .case > p {
+            font-size: 18px;
+            font-family: ubunturegular;
+            color: #292828;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 30px;
+            width: 30px;
+            display: flex;
+            border-radius: 100%;
+            background-color: #e8e6e6;
+            border: 2px solid #e97412;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 0 3px #e8e6e6; }
+    #calendar_container #displayCalendar > aside {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      flex: 1;
+      flex-direction: column; }
+      #calendar_container #displayCalendar > aside:not(#displayDays) {
+        justify-content: center; }
+    #calendar_container #displayCalendar .changeMonth {
+      flex: 0.08;
+      font-size: 3em;
+      color: #e97412;
+      text-align: center; }
+    #calendar_container #displayCalendar #daysLoader {
+      width: 140px;
+      height: 140px;
+      position: absolute; }
+      #calendar_container #displayCalendar #daysLoader > div.circle {
+        width: 34px;
+        height: 34px;
+        background-color: #e97412;
+        border-radius: 100%;
+        position: absolute;
+        animation: loader 1.6s ease-in-out infinite; }
+        #calendar_container #displayCalendar #daysLoader > div.circle:nth-child(1) {
+          top: 0;
+          left: 0; }
+        #calendar_container #displayCalendar #daysLoader > div.circle:nth-child(2) {
+          top: 0;
+          left: 51px;
+          animation-delay: .2s; }
+        #calendar_container #displayCalendar #daysLoader > div.circle:nth-child(3) {
+          top: 0;
+          right: 0;
+          animation-delay: .4s; }
+        #calendar_container #displayCalendar #daysLoader > div.circle:nth-child(4) {
+          top: 51px;
+          right: 0;
+          animation-delay: .6s; }
+        #calendar_container #displayCalendar #daysLoader > div.circle:nth-child(5) {
+          bottom: 0;
+          right: 0;
+          animation-delay: .8s; }
+        #calendar_container #displayCalendar #daysLoader > div.circle:nth-child(6) {
+          bottom: 0;
+          left: 51px;
+          animation-delay: 1s; }
+        #calendar_container #displayCalendar #daysLoader > div.circle:nth-child(7) {
+          bottom: 0;
+          left: 0;
+          animation-delay: 1.2s; }
+        #calendar_container #displayCalendar #daysLoader > div.circle:nth-child(8) {
+          top: 51px;
+          left: 0;
+          animation-delay: 1.4s; }
+
+@keyframes loader {
+  0% {
+    transform: scale(1); }
+  29% {
+    background-color: #292828; }
+  30% {
+    transform: scale(1.4);
+    background-color: #292828; }
+  50% {
+    transform: scale(1);
+    background-color: #e97412; } }
+
+@keyframes activeDay {
+  0% {
+    box-shadow: 0 0 0 0 #e97412; }
+  60% {
+    box-shadow: 0 0 0 15px transparent; } }

@@ -1,0 +1,238 @@
+@import '_color.scss';
+
+#clock_container{
+    height: 100%;
+
+    // #clock {
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     width: 100%;
+    //     height: 100%;
+    //     position: relative;
+    //     flex: 1;
+
+        // >
+    // }
+}
+
+#connect{
+    display: none;
+    height: 100%;
+
+    > aside {
+        display: flex;
+        flex-direction: column;
+
+        &#connectInfos > div.error {
+            border: 1px solid $error;
+            box-shadow: 0 0 2px $error;
+
+            > span{
+                color: $error;
+            }
+        }
+
+        > div {
+            display: flex;
+            background-color: $light;
+            border-radius: 5px;
+            align-items: center;
+            margin-bottom: 1em;
+            transition: all .1s;
+
+            > span {
+                font-size: 2em;
+                margin: 0 .5em;
+                transition: color .1s;
+            }
+
+            > input {
+                background-color: transparent;
+                border: none;
+                color: #2c2c2c;
+                font-size: 2em;
+                outline: none;
+                padding: .5em;
+                padding-left: 0;
+            }
+        }
+    }
+
+    > #footerConnect {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        > p{
+            color: $error;
+            font-size: 1.1em;
+            font-style: italic;
+        }
+
+        > button {
+            padding: .3em 2em;
+            border: 1px solid #2c2c2c;
+            background-color: #2c2c2c;
+            color: #fff;
+            font-size: 2em;
+            border-radius: 3px;
+            margin-top: .5em;
+        }
+
+        > div {
+            background: none;
+            margin-top: 1em;
+            font-size: 1.2em;
+
+            > button {
+                text-decoration: underline;
+                margin-left: .5em;
+                cursor: pointer;
+                font-size: 1em;
+                outline: none;
+                word-spacing: 3px;
+                letter-spacing: .5px;
+                font-family: 'lobster_1.3regular';
+            }
+        }
+    }
+}
+
+#main.connect #user_container{
+    > #clock_container, #newUser{
+        display: none;
+    }
+}
+
+#user_container{
+    .clock {
+        width: 300px;
+        height: 300px;
+        border-radius: 100%;
+        position: relative;
+        box-shadow: 0 0 0px 10px $dark;
+        background-color: $dark;
+
+        > .feature {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 1%;
+            border: 2vh solid $light;
+            border-left: 0;
+            border-right: 0;
+
+            &.clock5 {
+                transform: rotate(30deg);
+            }
+            &.clock10 {
+                transform: rotate(60deg);
+            }
+            &.clock15 {
+                transform: rotate(90deg);
+            }
+            &.clock20 {
+                transform: rotate(120deg);
+            }
+            &.clock25 {
+                transform: rotate(150deg);
+            }
+
+            &.high, &.clock15{
+                border: 4vh solid #fff;
+                border-right: 0;
+                border-left: 0;
+                width: 2%;
+            }
+
+            &.needle {
+                border: 0;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                transition: transform .5s;
+
+                > div {
+                    width: 100%;
+                    background-color: #fff;
+                    border-radius: 25px;
+                    transform: translateY(-50%);
+                }
+
+                &.big {
+                    width: 5%;
+                    transform: rotate(90deg);
+                    justify-content: center;
+
+                    > div {
+                        height: 35%;
+                        width: 50%;
+                        box-shadow: 0 0 20px $dark;
+                    }
+                }
+                &.small{
+                    width: 3%;
+                    transform: rotate(0deg);
+
+                    > div{
+                        height: 30%;
+                    }
+                }
+            }
+        }
+
+        > .center {
+            position: absolute;
+            width: 7%;
+            height: 7%;
+            background-color: $orange;
+            border-radius: 100%;
+            box-shadow: 0 0 6px $dark;
+        }
+    }
+
+    .setClock {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+
+        > span {
+            font-size: 7em;
+            align-self: center;
+        }
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 1em;
+
+            > p {
+                font-family: 'lobster_1.3regular';
+                font-size: 1.5em;
+            }
+
+            > div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                > span {
+                    font-size: 5em;
+                    color: $orange;
+                }
+
+                > input {
+                    padding: .2em;
+                    width: 7vw;
+                    font-size: 4em;
+                    text-align: center;
+                    background-color: $light;
+                }
+            }
+        }
+    }
+}
